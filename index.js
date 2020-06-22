@@ -2,7 +2,7 @@ const http = require('http');
 const express = require('express');
 const path = require('path')
 const httpProxy = require('http-proxy');
-const PORT = 5555;
+const PORT = process.env.PORT || 5555;
 
 const app = express();
 var proxy = httpProxy.createProxyServer({});
@@ -16,10 +16,10 @@ app.get('/main', (req, res) => {
   proxy.web(req, res, {target: `http://purrgetmainitemdisplay-env.eba-upicdvwk.us-east-2.elasticbeanstalk.com/`});
 });
 
-app.get('/purrget', (req,res) => {
-  console.log('redirecting to aboutItem server');
-  proxy.web(req, res, {target: `http://localhost:5100/`});
-})
+// app.get('/purrget', (req,res) => {
+//   console.log('redirecting to aboutItem server');
+//   proxy.web(req, res, {target: `http://localhost:5100/`});
+// })
 
 app.listen(PORT, () => {
   console.log(`Express Proxy is listening on port ${PORT}`);
