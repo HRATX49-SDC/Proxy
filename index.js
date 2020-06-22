@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/main', (req, res) => {
   console.log('redirecting to mainImage server')
-  proxy.web(req, res, {target: `http://localhost:5000/`});
+  proxy.web(req, res, {target: `http://purrgetmainitemdisplay-env.eba-upicdvwk.us-east-2.elasticbeanstalk.com/`});
 });
 
 app.get('/purrget', (req,res) => {
