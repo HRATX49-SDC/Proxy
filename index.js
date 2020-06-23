@@ -17,8 +17,8 @@ app.get('/main', (req, res) => {
 });
 
 app.get('/reccomended*', (req, res) => {
-  console.log('redireccting to recommended server');
-  proxy.web(req, res, {target: `http://reccomended-featuredserver-dev.us-east-2.elasticbeanstalk.com/`})
+  console.log('Redirecting to reccomended service')
+  proxy.web(req, res, {target: 'http://reccomended-featuredserver-dev.us-east-2.elasticbeanstalk.com/'})
 })
 
 // app.get('/purrget', (req,res) => {
