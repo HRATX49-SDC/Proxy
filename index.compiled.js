@@ -1,29 +1,33 @@
-const http = require('http');
+"use strict";
 
-const express = require('express');
+var express = require('express');
 
-const path = require('path');
+var path = require('path');
 
-const httpProxy = require('http-proxy');
+var httpProxy = require('http-proxy');
 
-const PORT = process.env.PORT || 5555;
-const app = express();
+var PORT = process.env.PORT || 5002;
+var app = express();
 var proxy = httpProxy.createProxyServer({});
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
 }));
-app.use(express.static(path.join(__dirname, 'public')));
-app.get('/main', (req, res) => {
+app.use(express["static"](path.join(__dirname, 'public'))); //routes
+
+app.get('/reccomended*', function (req, res) {
+  console.log('Redirecting to reccomended service');
+  proxy.web(req, res, {
+    target: 'http://reccomended-featuredserver-dev.us-east-2.elasticbeanstalk.com/'
+  });
+});
+app.get('/main', function (req, res) {
   console.log('redirecting to mainImage server');
   proxy.web(req, res, {
-    target: `http://purrgetmainitemdisplay-env.eba-upicdvwk.us-east-2.elasticbeanstalk.com/`
+    target: "http://purrgetmainitemdisplay-env.eba-upicdvwk.us-east-2.elasticbeanstalk.com/"
   });
-}); // app.get('/purrget', (req,res) => {
-//   console.log('redirecting to aboutItem server');
-//   proxy.web(req, res, {target: `http://localhost:5100/`});
-// })
+}); //listen
 
-app.listen(PORT, () => {
-  console.log(`Express Proxy is listening on port ${PORT}`);
+app.listen(PORT, function () {
+  console.log("Express is listening on port ".concat(PORT));
 });
