@@ -16,6 +16,11 @@ app.get('/main', (req, res) => {
   proxy.web(req, res, {target: `http://purrgetmainitemdisplay-env.eba-upicdvwk.us-east-2.elasticbeanstalk.com/`});
 });
 
+app.get('/reccomended*', (req, res) => {
+  console.log('redireccting to recommended server');
+  proxy.web(req, res, {target: `http://reccomended-featuredserver-dev.us-east-2.elasticbeanstalk.com/`})
+})
+
 // app.get('/purrget', (req,res) => {
 //   console.log('redirecting to aboutItem server');
 //   proxy.web(req, res, {target: `http://localhost:5100/`});
