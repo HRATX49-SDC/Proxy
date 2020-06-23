@@ -16,7 +16,7 @@ app.get('/main', (req, res) => {
   proxy.web(req, res, {target: `http://purrgetmainitemdisplay-env.eba-upicdvwk.us-east-2.elasticbeanstalk.com/`});
 });
 
-app.get('/reccomended*', (req, res) => {
+app.get('/reccomended/all', (req, res) => {
   console.log('Redirecting to reccomended service')
   proxy.web(req, res, {target: 'http://reccomended-featuredserver-dev.us-east-2.elasticbeanstalk.com/'})
 })
