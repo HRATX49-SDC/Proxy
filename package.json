@@ -1,0 +1,26 @@
+{
+  "name": "casper-mainitemdisplayproxy",
+  "version": "1.0.0",
+  "description": "Proxy Server for Main Item Display",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HRATX49-FEC/Casper-MainItemDisplayProxy.git"
+  },
+  "author": "Anthony Casper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HRATX49-FEC/Casper-MainItemDisplayProxy/issues"
+  },
+  "homepage": "https://github.com/HRATX49-FEC/Casper-MainItemDisplayProxy#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.6.0",
+    "http": "0.0.1-security",
+    "http-proxy": "^1.18.1"
+  }
+}
