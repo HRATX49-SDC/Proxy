@@ -21,12 +21,12 @@ app.all('/main', (req, res) => {
   proxy.web(req, res, {target: `http://purrgetmainitemdisplay-env.eba-upicdvwk.us-east-2.elasticbeanstalk.com/`});
 });
 
-app.all('/about', (req, res) => {
+app.all('/about*', (req, res) => {
   console.log('redirecting to about server')
   proxy.web(req, res, {target: `http://purrgetaboutthisitem-dev.us-east-1.elasticbeanstalk.com/`});
 });
 
-app.all('/search', (req, res) => {
+app.all('/search*', (req, res) => {
   console.log('redirecting to search server')
   proxy.web(req, res, {target: `http://v50-dev.us-east-1.elasticbeanstalk.com/`});
 });
