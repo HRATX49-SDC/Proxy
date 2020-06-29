@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://prrgetsearchbarfooter.s3.amazonaws.com/footer.css">
   <link rel="stylesheet" href="https://prrgetsearchbarfooter.s3.amazonaws.com/navbar.css">
   <link rel="stylesheet" href="https://prrgetsearchbarfooter.s3.amazonaws.com/search.css">
-  <!-- <link rel="stylesheet" href="https://purrget.s3.us-east-2.amazonaws.com/AboutItem/style.min.css"> -->
+  <link rel="stylesheet" href="https://purrgetaboutthisitem.s3.us-east-2.amazonaws.com/style.css">
   <title>Purrget</title>
 </head>
 <body>
@@ -22,9 +22,10 @@
   <div id='recommended'></div>
   <div id='reviews'></div>
   <div id='footer'></div>
-  <script src="https://purrget.s3.us-east-2.amazonaws.com/Recommended/bundle.js"></script>
   <script src="https://prrgetsearchbarfooter.s3.amazonaws.com/bundle.js"></script>
   <script src="https://purrget.s3.us-east-2.amazonaws.com/MainImage/bundle.js"></script>
+  <script src="https://purrgetaboutthisitem.s3.us-east-2.amazonaws.com/bundle.js"></script>
+  <script src="https://purrget.s3.us-east-2.amazonaws.com/Recommended/bundle.js"></script>
   <!-- What does bundle.js do? bundle.js is a compilation of all of my javascript in the src folder (react stuff)
        ReactDOM.render(<App />, document.getElementById('search'))
        App is some react rendering. Most likey it makes a server reqest that pulls data from the database //The Last of Us 2 PS4 bundle
@@ -33,11 +34,10 @@
        Proxy server recieves request app.all('/reviews') => proxy - (localhost:5000).
 
       -->
-  <!-- <script src="https://purrget.s3.us-east-2.amazonaws.com/AboutItem/bundle.min.js"></script> -->
-    <!-- What does bundle.js do? bundle.js is a compilation of all of my javascript in the src folder (react stuff)
-       ReactDOM.render(<App />, document.getElementById('main'))
-       App is some react rendering. Most likey it makes a server reqest that pulls data from the database //The Last of Us 2 PS4 bundle
-       Wihthin App (within the proxy), Bundle will call Axios.get('localhost:5555/carousel')
+      <!-- What does bundle.js do? bundle.js is a compilation of all of my javascript in the src folder (react stuff)
+        ReactDOM.render(<App />, document.getElementById('main'))
+        App is some react rendering. Most likey it makes a server reqest that pulls data from the database //The Last of Us 2 PS4 bundle
+        Wihthin App (within the proxy), Bundle will call Axios.get('localhost:5555/carousel')
        THe last of us 2 lives on localhost:5100.
       -->
       <!--   <script src="https://purrget.s3.us-east-2.amazonaws.com/MainImage/bundle.min.js"></script>
