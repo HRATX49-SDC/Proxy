@@ -18,7 +18,7 @@ app.all('/reccomended*', (req, res) => {
 
 app.all('/main', (req, res) => {
   console.log('redirecting to mainImage server')
-  proxy.web(req, res, {target: `http://purrgetmainitemdisplay-env.eba-upicdvwk.us-east-2.elasticbeanstalk.com/`});
+  proxy.web(req, res, {target: `http://purrgetmainitemv2.us-east-2.elasticbeanstalk.com/`});
 });
 
 app.all('/about*', (req, res) => {
