@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const compression = require('compression');
+const cors = require('cors');
 const httpProxy = require('http-proxy');
 const PORT = process.env.PORT || 5002;
 
@@ -8,6 +9,7 @@ const app = express();
 const proxy = httpProxy.createProxyServer({});
 
 app.use(compression());
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
