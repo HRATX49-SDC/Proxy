@@ -6,8 +6,6 @@ var path = require('path');
 
 var compression = require('compression');
 
-var cors = require('cors');
-
 var httpProxy = require('http-proxy');
 
 var PORT = process.env.PORT || 5002;

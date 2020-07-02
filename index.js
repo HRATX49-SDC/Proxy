@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const compression = require('compression');
-const cors = require('cors');
 const httpProxy = require('http-proxy');
 const PORT = process.env.PORT || 5002;
 
