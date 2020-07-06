@@ -11,21 +11,16 @@ var httpProxy = require('http-proxy');
 var PORT = process.env.PORT || 5002;
 var app = express();
 var proxy = httpProxy.createProxyServer({});
-app.use(compression());
-app.use(express.json());
-app.use(express.urlencoded({
-  extended: true
-}));
-app.use(express["static"](path.join(__dirname, 'public'))); //routes
+app.use(compression()); //routes
 
 app.all('/reccomended*', function (req, res) {
   proxy.web(req, res, {
-    target: 'http://reccomended-featuredserver-dev.us-east-2.elasticbeanstalk.com/'
+    target: 'http://rec-feat-display.us-east-2.elasticbeanstalk.com/'
   });
 });
 app.all('/main*', function (req, res) {
   proxy.web(req, res, {
-    target: "http://purrgetmainitemv2.us-east-2.elasticbeanstalk.com/"
+    target: "http://purrgetmainitemdisplay.us-east-2.elasticbeanstalk.com/"
   });
 });
 app.all('/about*', function (req, res) {
@@ -42,7 +37,13 @@ app.all('/reviews*', function (req, res) {
   proxy.web(req, res, {
     target: "http://service-dev2.us-west-2.elasticbeanstalk.com/"
   });
-}); //listen
+}); //place here to allow for proper request forwarding
+
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
+app.use(express["static"](path.join(__dirname, 'public'))); //listen
 
 app.listen(PORT, function () {
   console.log("Express is listening on port ".concat(PORT));

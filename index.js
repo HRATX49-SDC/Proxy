@@ -8,17 +8,14 @@ const app = express();
 const proxy = httpProxy.createProxyServer({});
 
 app.use(compression());
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
-app.use(express.static(path.join(__dirname, 'public')));
 
 //routes
 app.all('/reccomended*', (req, res) => {
-  proxy.web(req, res, {target: 'http://reccomended-featuredserver-dev.us-east-2.elasticbeanstalk.com/'})
+  proxy.web(req, res, {target: 'http://rec-feat-display.us-east-2.elasticbeanstalk.com/'})
 })
 
 app.all('/main*', (req, res) => {
-  proxy.web(req, res, {target: `http://purrgetmainitemv2.us-east-2.elasticbeanstalk.com/`});
+  proxy.web(req, res, {target: `http://purrgetmainitemdisplay.us-east-2.elasticbeanstalk.com/`});
 });
 
 app.all('/about*', (req, res) => {
@@ -32,6 +29,11 @@ app.all('/search*', (req, res) => {
 app.all('/reviews*', (req, res) => {
   proxy.web(req, res, {target: `http://service-dev2.us-west-2.elasticbeanstalk.com/`});
 })
+
+//place here to allow for proper request forwarding
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //listen
 app.listen(PORT, () => {
