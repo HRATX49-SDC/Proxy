@@ -27,7 +27,8 @@
     "express": "^4.17.1",
     "express-http-proxy": "^1.6.0",
     "http": "0.0.1-security",
-    "http-proxy": "^1.18.1"
+    "http-proxy": "^1.18.1",
+    "k6": "0.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.10.3"
